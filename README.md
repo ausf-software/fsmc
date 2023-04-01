@@ -1,2 +1,2 @@
-# fsmc.github.io
-Finite state machine calculator
+# Finite state machine calculator
+## [Open web version](https://fsmc.github.io/)
