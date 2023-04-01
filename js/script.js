@@ -13,6 +13,9 @@ window.onload = function () {
 		ob.parseFunction();
 		ob.setsInit();
 		ob.calculateState();
+		var theDiv = document.getElementById("back");
+		theDiv.innerHTML += ob.toHtmlString();
+		theDiv.appendChild(content);
 		console.log(ob.toString());	
 	}
 };
