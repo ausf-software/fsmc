@@ -14,7 +14,7 @@ li {
 
 body{
 	font-family: 'Raleway', sans-serif;
-	background-color: #FFFFFF;
+	background-color: #404040;
 }
 
 nav {
@@ -22,7 +22,86 @@ nav {
 	padding-top: 20px;
 	width: 100%;
 	text-align: center;
-	height: 70px;
+	height: 50px;
+}
+
+header .site_menu {
+	background-color: #363636;
+}
+
+.site_menu a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 16px;
+}
+
+header .site_menu a:hover {
+	border-bottom: 4px solid #FFFFFF;
+}
+
+.site_menu a.icon {
+	display: none;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1140px;
+}
+
+.calculator-settings {
+	padding-top: 20px;
+	height: 150px;
+}
+
+.calculator-text {
+	color: #C4C4C4;
+	font-weight: bold;
+	text-align: center;
+	font-size: 36px;
+}
+
+footer {
+	height: auto;
+	margin: 0 auto;
+	background-color: #212121;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	color: #FFFFFF;
+}
+
+footer .site_menu a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 14px;
+}
+
+footer .site_menu a:hover {
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.answer_section_container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.back {
+	width: 100%;
+	height: 500px;
+	background-color: #C4C4C4;
+	border-radius: 40px;
+	margin-bottom: 40px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.cop {
+	padding-top: 25px;
 }
 
 header .head {
@@ -56,47 +135,6 @@ input[type=button] {
 	background-color: #505585;
 }
 
-.site_menu a {
-	color: #FFFFFF;
-	font-weight: bold;
-	text-align: center;
-	padding: 14px 16px;
-	font-size: 16px;
-}
-
-.container {
-	margin: 0 auto;
-	padding: 0 15px;
-	max-width: 1140px;
-}
-
-
-footer {
-	height: auto;
-	margin: 0 auto;
-	background-color: #212121;
-	text-align: center;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	color: #FFFFFF;
-}
-
-footer .site_menu a {
-	color: #FFFFFF;
-	font-weight: bold;
-	text-align: center;
-	padding: 14px 16px;
-	font-size: 14px;
-}
-
-footer .site_menu a:hover {
-	border-bottom: 1px solid #FFFFFF;
-}
-
-.cop {
-	padding-top: 25px;
-}
-
 @media screen and (min-width: 768px) {
 	header nav {
 		background-color: #363636;
@@ -117,6 +155,36 @@ footer .site_menu a:hover {
 	
 	input[type=text] {
 		width:50%;
+	}
+	
+	header .site_menu a {
+		display: none;
+	}
+	header .site_menu a.icon {
+		float: right;
+		margin-top: -10px;
+		display: block;
+		color: #FFFFFF;
+	}
+	nav {
+		width: 100%;
+		height: 100%;
+		background-color: #303030;
+		padding-top: 0px;
+	}
+	header .site_menu.responsive {
+		position: relative;
+	}
+	header .site_menu.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	header .site_menu.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
 	}
 	
 }

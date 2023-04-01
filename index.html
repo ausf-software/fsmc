@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<header>
+	<head>
 		<meta charset="utf-8">
 
 		<title>Finite state machine calculator</title>
@@ -11,24 +11,47 @@
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	</header>
+	</head>
 
 	<body>
 
 		<header>
-			<nav id="calculator-settings">
-				<div id="head" class="head">
-					<form>
-						<label for="function-text">Function:</label>
-						<input type="text" name="function-input" id="function-input" placeholder="f(x₁, x₂, ... , x₃₂) = α₁x₁ + α₂x₂ + ... + α₃₂x₃₂ + β">
-						<input type="button" name="function-submit" id="function-submit" value="Submit">
-					</form>
-				</div>
+			<nav id="menu">
+			<div id="site_menu" class="site_menu">
+				<a id="home" href="https://ausf-software.github.io/">Home</a>
+				<a id="product" href="https://ausf-software.github.io/product">Products</a>
+				<a id="tutorials">Tutorials</a>
+				<a id="documentation">Documentation</a>
+				<a id="downloads">Downloads</a>
+				<a id="github" href="https://github.com/ausf-software">GitHub</a>
+				<a id="menu" class="icon" href="#">&#9776;</a>
+			</div>
 			</nav>
 		</header>
 
 		<main>
+			<section>
+				<nav class="calculator-settings">
+				<label class="calculator-text">Finite state machine calculator</label>
+					<div id="head" class="head">
+						<form>
+							<label for="function-text">Function:</label>
+							<input type="text" name="function-input" id="function-input" placeholder="f(x₁, x₂, ... , x₃₂) = α₁x₁ + α₂x₂ + ... + α₃₂x₃₂ + β" onkeydown="if(event.keyCode==13){return false;}">
+							<input type="button" name="function-submit" id="function-submit" value="Submit">
+						</form>
+					</div>
+				</nav>
+			</section>
 			
+			<section class="answer_section">
+				<div class="container">
+					<div class="answer_section_container">
+						<div class="back">
+							
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 
 		<script type="text/javascript" src="js/data_object.js"></script>
@@ -39,6 +62,10 @@
 			<div class="container">
 				<div id="site_menu" class="site_menu">
 					<a id="home" href="https://ausf-software.github.io/">Home</a>
+					<a id="product" href="https://ausf-software.github.io/product">Products</a>
+					<a id="tutorials">Tutorials</a>
+					<a id="documentation">Documentation</a>
+					<a id="downloads">Downloads</a>
 					<a id="github" href="https://github.com/ausf-software">GitHub</a>
 				</div>
 				<p class="cop">AUSF-software &#169;2023</p>
