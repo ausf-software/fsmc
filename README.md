@@ -1,4 +1,4 @@
-# [Open web version](https://fsmc.github.io/)
+# [Open web version](https://ausf-software.github.io/fsmc/)
 # Finite state machine calculator
 A finite state machine calculator from a given linear function of the form:
 <blockquote>f(x₁, x₂, ... , x₃₂) = α₁x₁ + α₂x₂ + ... + α₃₂x₃₂ + β</blockquote>
