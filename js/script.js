@@ -8,6 +8,7 @@ window.onload = function () {
 		}
 	}
 	document.getElementById("function-submit").onclick = function(){
+		document.getElementById("back").innerHTML = "";
 		var input = document.getElementById('function-input');
 		var ob = new StateMachine(input.value);
 		ob.parseFunction();
