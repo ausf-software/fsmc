@@ -61,7 +61,6 @@ class StateMachine {
 							name = last;
 							value = Number(sub[0].substring(0, sub[0].length - 1));
 						}
-						console.log(value);
 					}
 				}
 			} else {

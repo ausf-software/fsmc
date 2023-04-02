@@ -17,7 +17,7 @@
 }
 
 .answer_container {
-	padding-top: 25px;
+	padding-top: 40px;
 	width: 100%;
 	background-color: #C4C4C4;
 	border-radius: 40px;
@@ -46,6 +46,12 @@
 	border-radius: 40px;
 	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
 	font-size: 30px;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .answer {

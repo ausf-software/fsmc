@@ -50,31 +50,37 @@
 					<div class="answer_section_container">
 						<div class="answer_container" id="info">
 							<label id="info_selector" class="selector">&#9660; Readme</label>
-							<br><br><br><br><label class='answer'>The spelling accepted by the parser:</label>
-							<br><br><br><label class='answer_sub'>1. Multiplication:</label>
-								<br><br><br><label class='answer-item_sub'>α*x; x*α; αx; xα</label>
-							<br><br><br><label class='answer_sub'>2. Addition:</label>
-								<br><br><br><label class='answer-item_sub'>x₁+x₂; x₁-x₂</label>
-							<br><br><br><label class='answer_sub'>3. Letters of the Latin alphabet:</label>
-								<br><br><br><label class='answer-item_sub'>a, b, c, d, ...</label>
-							<br><br><br><label class='answer_sub'>4. Arabic numerals:</label>
-								<br><br><br><label class='answer-item_sub'>0, 1, 2, ...</label>
-							<br><br><br><br><label class='answer'>Examples of function input:</label>
-								<br><br><br><label class='answer_sub'>2*n+3*m-5</label>
-								<br><br><br><label class='answer_sub'>2*n+3*m-5</label>
-								<br><br><br><label class='answer_sub'>n*3+m3-5</label>
+							<div id="info_div">
+								<br><br><br><label class='answer'>The spelling accepted by the parser:</label>
+								<br><br><br><label class='answer_sub'>1. Multiplication:</label>
+									<br><br><br><label class='answer-item_sub'>α*x; x*α; αx; xα</label>
+								<br><br><br><label class='answer_sub'>2. Addition:</label>
+									<br><br><br><label class='answer-item_sub'>x₁+x₂; x₁-x₂</label>
+								<br><br><br><label class='answer_sub'>3. Letters of the Latin alphabet:</label>
+									<br><br><br><label class='answer-item_sub'>a, b, c, d, ...</label>
+								<br><br><br><label class='answer_sub'>4. Arabic numerals:</label>
+									<br><br><br><label class='answer-item_sub'>0, 1, 2, ...</label>
+								<br><br><br><br><label class='answer'>Examples of function input:</label>
+									<br><br><br><label class='answer_sub'>2*n+3*m-5</label>
+									<br><br><br><label class='answer_sub'>2*n+3*m-5</label>
+									<br><br><br><label class='answer_sub'>n*3+m3-5</label>
+							</div>
 						</div>
 					</div>
 				
 					<div class="answer_section_container">
 						<div class="answer_container" id="text_answer">
 							<label id="answer_text_selector" class="selector">&#9660; Text answer</label>
+							<div id="text_answer_div">
+							</div>
 						</div>
 					</div>
 					
 					<div class="answer_section_container">
 						<div class="answer_container" id="table_answer">
 							<label id="answer_table_selector" class="selector">&#9660; Tables</label>
+							<div id="table_div">
+							</div>
 						</div>
 					</div>
 					
@@ -84,7 +90,9 @@
 
 		<script type="text/javascript" src="js/data_object.js"></script>
 		<script type="text/javascript" src="js/state_machine.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/fsmc.js"></script>
+		<script type="text/javascript" src="https://ausf-software.github.io/js/script.js"></script>
+		
 
 		<footer>
 			<div class="container">
