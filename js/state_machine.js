@@ -56,16 +56,19 @@ class StateMachine {
 						var last = sub[0].at(sub[0].length - 1);
 						if (regIsNumber.test(last)) {
 							name = sub[0].substring(0, 1);
-							value = Number(sub[0].at(1));
+							var pr = sub[0].at(1);
+							value = pr.length != 0 ? Number(pr) : 1;
 						} else {
 							name = last;
-							value = Number(sub[0].substring(0, sub[0].length - 1));
+							var pr = sub[0].substring(0, sub[0].length - 1);
+							value = pr.length != 0 ? Number(pr) : 1;
 						}
 					}
 				}
 			} else {
 				value = Number(sub[0]);
 			}
+			console.log(value);console.log(name);
 			name = name.length == 0 ? (type == 1 ? "number" : sub[pos_name]) : name;
 			
 			if (type == 0) this.setSize++;
