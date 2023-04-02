@@ -1,0 +1,118 @@
+.calculator-settings {
+	padding-top: 20px;
+	height: 150px;
+}
+
+.calculator-text {
+	color: #C4C4C4;
+	font-weight: bold;
+	text-align: center;
+	font-size: 36px;
+}
+
+.answer_section_container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.answer_container {
+	padding-top: 25px;
+	width: 100%;
+	background-color: #C4C4C4;
+	border-radius: 40px;
+	margin-bottom: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 40px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	
+	color: #212121;
+	font-weight: bold;
+	text-align: left;
+	font-size: 20px;
+}
+
+.answer_container label {
+	color: #212121;
+	font-family: 'Сomic Sans MS', cursive;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.answer_container .selector {
+	font-family: 'Сomic Sans MS', cursive;
+	background-color: #EEEEEE;
+	border-radius: 40px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	font-size: 30px;
+}
+
+.answer {
+	margin-left: 40px;
+	background-color: #D5D5D5;
+	border-radius: 40px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+.answer-item {
+	margin-left: 80px;
+	border-radius: 20px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	font-size: 16px;
+}
+
+.answer_sub {
+	margin-left: 80px;
+	background-color: #CACACA;
+	border-radius: 40px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+.answer-item_sub {
+	margin-left: 120px;
+	border-radius: 20px;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	font-size: 16px;
+}
+
+.head label {
+	color: #C4C4C4;
+	font-weight: bold;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 20px;
+}
+
+input {
+	padding: 10px;
+	margin: 10px 0;
+	border: 0;
+	box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+input[type=text] {
+	width:65%;
+	background-color: #AAAAAA;
+}
+
+input[type=button] {
+	color: #C4C4C4;
+	background-color: #505585;
+}
+
+@media screen and (max-width: 768px) {
+	header .head.responsive {
+		position: relative;
+	}
+	
+	input[type=text] {
+		width:40%;
+	}
+}
