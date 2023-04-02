@@ -169,7 +169,7 @@ class StateMachine {
 		for (var i = 0; i < this.states.length; i++) {
 			st += "<br><label class='answer'>Из состояния " + this.states[i].name + ":" + "</label>";
 			for (var k = 0; k < this.sets.length; k++) {
-				st += "<br><br><br><label class='answer-item'>в состояние: " + this.states[i].trans[k].toString() + "</label>";
+				st += "<br><br><br><label class='answer-item'>в состояние " + this.states[i].trans[k].toString() + "</label>";
 			}
 			st += "<br><br>";
 		}
