@@ -1,5 +1,6 @@
 .calculator-settings {
 	padding-top: 20px;
+	text-align: center;
 	height: 150px;
 	background-color: #414141;
 }
@@ -122,5 +123,64 @@ input[type=button] {
 	
 	input[type=text] {
 		width:40%;
+	}
+	
+	.calculator-text {
+		font-size: 30px;
+	}
+	
+	.answer_container .selector {
+		font-size: 25px;
+	}
+	
+	.answer {
+		font-size: 16px;
+		margin-left: 20px;
+	}
+
+	.answer-item {
+		font-size: 12px;
+		margin-left: 40px;
+	}
+	
+	.answer_sub {
+		font-size: 12px;
+		margin-left: 40px;
+	}
+	
+	.answer-item_sub {
+		margin-left: 60px;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 350px) {
+	
+	input[type=text] {
+		width:25%;
+	}
+	
+	.answer_container .selector {
+		font-size: 14px;
+	}
+	
+	.calculator-text {
+		font-size: 20px;
+	}
+	
+	.answer {
+		font-size: 12px;
+	}
+
+	.answer-item {
+		font-size: 10px;
+	}
+	
+	.answer_sub {
+		font-size: 10px;
+	}
+	
+	.answer-item_sub {
+		font-size: 10px;
 	}
 }
