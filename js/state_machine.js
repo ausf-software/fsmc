@@ -35,9 +35,39 @@ class StateMachine {
 			var type = regIsNumber.test(sum[i]) ? 1 : 0;
 			var operation = sum[i].at(0) == '-' ? 1 : 0;
 			sum[i] = sum[i].replace("-", "");
+			
+			var pos_name = 1;
 			var sub = sum[i].split("*");
-			var value = Number(sub[0]);
-			var name = type == 1 ? "number" : sub[1];
+			var value;
+			var name = "";
+			
+			if (type == 0) {
+				if (sub.length == 2) {
+					if (regIsNumber.test(sub[0])) {
+						value = Number(sub[0]);
+					} else {
+						value = Number(sub[1]);
+						pos_name = 0;
+					}
+				} else {
+					if (sub[0].length == 0) {
+						value = 0;
+					} else {
+						var last = sub[0].at(sub[0].length - 1);
+						if (regIsNumber.test(last)) {
+							name = sub[0].substring(0, 1);
+							value = Number(sub[0].at(1));
+						} else {
+							name = last;
+							value = Number(sub[0].substring(0, sub[0].length - 1));
+						}
+						console.log(value);
+					}
+				}
+			} else {
+				value = Number(sub[0]);
+			}
+			name = name.length == 0 ? (type == 1 ? "number" : sub[pos_name]) : name;
 			
 			if (type == 0) this.setSize++;
 			else this.isNumber = true;
@@ -133,15 +163,16 @@ class StateMachine {
 	
 	toHtmlString() { 
 		var st = "";
-		st += "<label class='answer'>Исходная функция : " + this.func + "</label>";
-		st += "<br><label class='answer'>Количество переменных : " + this.setSize + "</label>";
-		st += "<br>";
+		st += "<br><label class='answer'>Исходная функция: " + this.func + "</label>";
+		st += "<br><br><br><label class='answer'>Количество переменных: " + this.setSize + "</label>";
+		st += "<br><br><br><label class='answer'>Начальное состояние: " + this.states[0].name + "</label>";
+		st += "<br><br>";
 		for (var i = 0; i < this.states.length; i++) {
 			st += "<br><label class='answer'>Из состояния " + this.states[i].name + ":" + "</label>";
 			for (var k = 0; k < this.sets.length; k++) {
-				st += "<br><label class='answer-item'>		в состояние: " + this.states[i].trans[k].toString() + "</label>";
+				st += "<br><br><br><label class='answer-item'>в состояние: " + this.states[i].trans[k].toString() + "</label>";
 			}
-			st += "<br>";
+			st += "<br><br>";
 		}
 		return st;
 	}
