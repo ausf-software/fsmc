@@ -25,9 +25,8 @@ class StateMachine {
 	
 	parseFunction() {
 		var temp = this.func;
-		temp = temp.replace("-", "+-");
+		temp = temp.replaceAll("-", "+-");
 		var sum = temp.split("+");
-		
 		var regIsNumber = new RegExp("^[0-9-]+$");
 		
 		for (let i = 0; i < sum.length; i++) {
@@ -68,7 +67,7 @@ class StateMachine {
 			} else {
 				value = Number(sub[0]);
 			}
-			console.log(value);console.log(name);
+			
 			name = name.length == 0 ? (type == 1 ? "number" : sub[pos_name]) : name;
 			
 			if (type == 0) this.setSize++;

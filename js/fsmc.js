@@ -5,6 +5,9 @@ document.getElementById("function-submit").onclick = function(){
 	ob.parseFunction();
 	ob.setsInit();
 	ob.calculateState();
+	console.log(ob.summands);
+	console.log(ob.states);
+	console.log(ob.toString());
 	var theDiv = document.getElementById("text_answer_div");
 	theDiv.innerHTML += ob.toHtmlString();
 }
