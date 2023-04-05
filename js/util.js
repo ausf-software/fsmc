@@ -64,7 +64,7 @@ function getDNF(states, state_table, sets, sets_table, trans_if_function, state_
 				
 				if (trans_if_function(states, i, k)) {
 					for (var y = 0; y < sets_table.step; y++) {
-						code_var_.push(new PDNFObject(sets_table.codes_sets[k].values[y], "x", getIndexString(k.toString())));
+						code_var_.push(new PDNFObject(sets_table.codes_sets[k].values[y], "x", getIndexString(y.toString())));
 					}
 				}
 				if (code_var_.length != 0) {
