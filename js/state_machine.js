@@ -9,6 +9,7 @@ class StateMachine {
 	
 	sets_table;
 	state_table;
+	canonical;
 
     constructor (func) {
         this.func = func;
@@ -17,6 +18,7 @@ class StateMachine {
 		this.sets = [];
 		this.states = [];
 		this.isNumber = false;
+		this.canonical = [];
 	}
 	
 	parseFunction() {
@@ -183,7 +185,7 @@ class StateMachine {
 		return st;
 	}
 	
-	getCanonical() {
+	calculateCanonical() {
 		var res = [];
 		
 		var trans_if_function_y = function(states, state_id, trans_id){
@@ -224,9 +226,7 @@ class StateMachine {
 			res.push(q_text);
 		}
 		
-		
-
-		return res;
+		this.canonical = res;
 	}
 	
 };

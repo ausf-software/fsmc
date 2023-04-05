@@ -145,10 +145,10 @@ table td{
 	text-align: left;
 }
 table tbody tr:nth-child(odd){
-	background: #fff;
+	background: #CACACA;
 }
 table tbody tr:nth-child(even){
-	background: #F7F7F7;
+	background: #D5D5D5;
 }
 
 @media screen and (max-width: 768px) {
