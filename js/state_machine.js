@@ -1,10 +1,3 @@
-function createBinaryString (nMask) {
-  // nMask must be between -2147483648 and 2147483647
-  for (var nFlag = 0, nShifted = nMask, sMask = ""; nFlag < 32;
-       nFlag++, sMask += String(nShifted >>> 31), nShifted <<= 1);
-  return sMask;
-}
-
 class StateMachine {
 	
 	func;
@@ -13,6 +6,9 @@ class StateMachine {
 	sets;
 	states;
 	isNumber;
+	
+	sets_table;
+	state_table;
 
     constructor (func) {
         this.func = func;
@@ -79,11 +75,16 @@ class StateMachine {
 	
 	setsInit() {
 		var count = 2**this.setSize;
+		var table_names = [];
 		
 		for (var i = 0; i < count; i++) {
 			var str = createBinaryString(i).slice(32 - this.setSize);
 			this.sets.push(new Set(this.setSize, str.split("")));
+			table_names.push(this.sets[i].toString());
 		}
+	
+		this.sets_table = new CodeTable(table_names, "x");
+		this.sets_table.calculate();
 	}
 	
 	calculateState() {
@@ -98,6 +99,7 @@ class StateMachine {
 				}
 			}
 		}
+		var table_names = [];
 		var max = 1;
 		for (var mark = 0; mark < max; mark++) {
 			for (var set of this.sets) {
@@ -112,7 +114,7 @@ class StateMachine {
 				var binary = temp.toString(2);
 				
 				var res;
-				if (new_state_operation == 1 && Number(binary.at(binary.length - 1)) == 1) {
+				if (new_state_operation == 1 && temp % 2 == 1) {
 					temp += 2;
 					binary = temp.toString(2);
 				}
@@ -145,17 +147,22 @@ class StateMachine {
 					this.states[mark].addTransition(set, this.states[flag].name, res);
 				}
 			}
+			table_names.push(this.states[mark].name);
 		}
+		
+		this.state_table = new CodeTable(table_names, "q");
+		this.state_table.calculate();
+		console.log(this.state_table.toString());
 	}
 	
 	toString() {
 		var st = "";
-		st += "Исходная функция : " + this.func + "\n";
-		st += "Количество переменных : " + this.setSize + "\n\n";
+		st += "The original function: " + this.func + "\n";
+		st += "Initial state: " + this.setSize + "\n\n";
 		for (var i = 0; i < this.states.length; i++) {
-			st += "Из состояния " + this.states[i].name + ":\n";
+			st += "Out of state " + this.states[i].name + ":\n";
 			for (var k = 0; k < this.sets.length; k++) {
-				st += "		в состояние: " + this.states[i].trans[k].toString() + "\n";
+				st += "		in the state of " + this.states[i].trans[k].toString() + "\n";
 			}
 			st += "\n";
 		}
@@ -164,18 +171,62 @@ class StateMachine {
 	
 	toHtmlString() { 
 		var st = "";
-		st += "<br><label class='answer'>Исходная функция: " + this.func + "</label>";
-		st += "<br><br><br><label class='answer'>Количество переменных: " + this.setSize + "</label>";
-		st += "<br><br><br><label class='answer'>Начальное состояние: " + this.states[0].name + "</label>";
-		st += "<br><br>";
+		st += "<p class='answer'>The original function: " + this.func;
+		st += "<p class='answer'>Number of variables: " + this.setSize;
+		st += "<p class='answer'>Initial state: " + this.states[0].name;
 		for (var i = 0; i < this.states.length; i++) {
-			st += "<br><label class='answer'>Из состояния " + this.states[i].name + ":" + "</label>";
+			st += "<p class='answer'>Out of state " + this.states[i].name + ":";
 			for (var k = 0; k < this.sets.length; k++) {
-				st += "<br><br><br><label class='answer-item'>в состояние " + this.states[i].trans[k].toString() + "</label>";
+				st += "<p class='answer-item'>in the state of " + this.states[i].trans[k].toString();
 			}
-			st += "<br><br>";
 		}
 		return st;
+	}
+	
+	getCanonical() {
+		var res = [];
+		
+		var trans_if_function_y = function(states, state_id, trans_id){
+			return states[state_id].trans[trans_id].res == 1;
+		}
+		
+		var state_if_function_y = function(state, state_table){
+			return true;
+		}
+		var y_text = "y(t) =";
+		var y_dnf = getDNF(this.states, this.state_table, this.sets, this.sets_table, trans_if_function_y, state_if_function_y);
+		y_text += " " + y_dnf.toString();
+		res.push(y_text);
+		
+		var q_number = 0;
+		var names = [];
+		var state_if_function_q = function(state, state_table){
+			var flag = false;
+			for (var i = 0; i < names.length && !flag; i++) {
+				flag = state.trans[i].end == names[i];
+			}
+			return flag;
+		}
+		
+		var trans_if_function_q = function(states, state_id, trans_id){
+			var flag = false;
+			for (var i = 0; i < names.length && !flag; i++) {
+				flag = states[state_id].trans[trans_id].end == names[i];
+			}
+			return flag;
+		}
+		
+		for (; q_number < this.state_table.step; q_number++) {
+			names = getStatesQ(q_number, this.state_table);
+			var q_dnf = getDNF(this.states, this.state_table, this.sets, this.sets_table, trans_if_function_q, state_if_function_q);
+			var q_text = "q" + getIndexString(q_number.toString()) + "(t) =";
+			q_text += " " + q_dnf.toString();
+			res.push(q_text);
+		}
+		
+		
+
+		return res;
 	}
 	
 };

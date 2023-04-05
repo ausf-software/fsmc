@@ -20,6 +20,6 @@ A finite state machine calculator from a given linear function of the form:
 6. There is no support for sequential assignment of operations by '(' and ')'.
 
 ### Examples of function input:
-	* 2*n+3*m-5
-	* 2n+3m-5
-	* n*3+m3-5
+* 2*n+3*m-5
+* 2n+3m-5
+* n*3+m3-5
