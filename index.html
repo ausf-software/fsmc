@@ -9,36 +9,30 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		
+		<link rel="icon" href="https://ausf-software.github.io/favicon.ico"> <!-- 32×32 -->
+		<link rel="icon" href="https://ausf-software.github.io/images/favicons/icon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="https://ausf-software.github.io/images/favicons/apple.png">  <!-- 180×180 -->
+		<link rel="manifest" href="https://ausf-software.github.io/manifest.webmanifest">
 
 		<link rel="stylesheet" type="text/css" href="https://ausf-software.github.io/css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/fsmc.css">
-		<meta name="viewport" content="width=device-width">
 		
+		<meta name="viewport" content="width=device-width">
 		<meta name = "description" content = "A finite state machine calculator from a given linear function of the form: f(x₁, x₂, ... , x₃₂) = α₁x₁ + α₂x₂ + ... + α₃₂x₃₂ + β" />
 		<meta name = "keywords" content = "finite state machine, finite state machine calculator, калькулятор, калькулятор конечных автоматов, конечные автоматы, конечный автомат" />
 		<meta name = "robots" content = "index,follow" />
+		<script type="text/javascript" src="https://ausf-software.github.io/js/script.js"></script>
 	</head>
 
 	<body>
 
-		<header>
-			<nav id="menu">
-			<div id="site_menu" class="site_menu">
-				<a id="home" href="https://ausf-software.github.io/">Home</a>
-				<a id="product" href="https://ausf-software.github.io/product">Products</a>
-				<a id="tutorials">Tutorials</a>
-				<a id="documentation">Documentation</a>
-				<a id="downloads">Downloads</a>
-				<a id="github" href="https://github.com/ausf-software">GitHub</a>
-				<a id="menu" class="icon" href="#">&#9776;</a>
-			</div>
-			</nav>
-		</header>
+		<header id="header"></header>
 
 		<main>
 			<section>
 				<div class="calculator-settings">
-					<label class="calculator-text">Finite state machine calculator</label>
+					<h1 class="calculator-text">Finite state machine calculator</label>
 					<div id="head" class="head">
 						<form>
 							<label for="function-text">Function:</label>
@@ -106,22 +100,9 @@
 		<script type="text/javascript" src="js/data_object.js"></script>
 		<script type="text/javascript" src="js/state_machine.js"></script>
 		<script type="text/javascript" src="js/fsmc.js"></script>
-		<script type="text/javascript" src="https://ausf-software.github.io/js/script.js"></script>
 		
 
-		<footer>
-			<div class="container">
-				<div id="site_menu" class="site_menu">
-					<a id="home" href="https://ausf-software.github.io/">Home</a>
-					<a id="product" href="https://ausf-software.github.io/product">Products</a>
-					<a id="tutorials">Tutorials</a>
-					<a id="documentation">Documentation</a>
-					<a id="downloads">Downloads</a>
-					<a id="github" href="https://github.com/ausf-software">GitHub</a>
-				</div>
-				<p class="cop">AUSF-software &#169;2023</p>
-			</div>
-		</footer>
+		<footer id="footer"></footer>
 		
 	</body>
 </html>

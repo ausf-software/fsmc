@@ -154,7 +154,6 @@ class StateMachine {
 		
 		this.state_table = new CodeTable(table_names, "q");
 		this.state_table.calculate();
-		console.log(this.state_table.toString());
 	}
 	
 	toString() {

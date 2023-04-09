@@ -1,11 +1,12 @@
 .calculator-settings {
 	padding-top: 20px;
 	text-align: center;
-	height: 150px;
+	height: 200px;
 	background-color: #414141;
 }
 
 .calculator-text {
+	margin-top: 30px;
 	color: #C4C4C4;
 	font-weight: bold;
 	text-align: center;

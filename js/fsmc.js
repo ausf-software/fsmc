@@ -16,8 +16,6 @@ document.getElementById("function-submit").onclick = function(){
 		ob.calculateState();
 		ob.calculateCanonical();
 		
-		log(ob);
-		
 		var theDivText = document.getElementById("text_answer_div");
 		theDivText.innerHTML += ob.toHtmlString();
 		
