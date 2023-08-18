@@ -23,6 +23,7 @@
 		<meta name = "keywords" content = "finite state machine, finite state machine calculator, калькулятор, калькулятор конечных автоматов, конечные автоматы, конечный автомат" />
 		<meta name = "robots" content = "index,follow" />
 		<script type="text/javascript" src="https://ausf-software.github.io/js/script.js"></script>
+		<script src="https://cdn-0.plantuml.com/synchro2.min.js" defer=""></script>
 	</head>
 
 	<body>
@@ -51,18 +52,45 @@
 							<label id="info_selector" class="selector">&#9660; Readme</label>
 							<div id="info_div">
 								<p class='answer'>The spelling accepted by the parser:
-								<p class='answer_sub'>1. Multiplication:
-									<p class='answer-item_sub'>α*x; x*α; αx; xα
-								<p class='answer_sub'>2. Addition:
-									<p class='answer-item_sub'>x₁+x₂; x₁-x₂
-								<p class='answer_sub'>3. Letters of the Latin alphabet:
-									<p class='answer-item_sub'>a, b, c, d, ...
-								<p class='answer_sub'>4. Arabic numerals:
-									<p class='answer-item_sub'>0, 1, 2, ...
+									<p class='answer_sub'>1. Multiplication:
+										<p class='answer-item_sub'>α*x; x*α; αx; xα
+									<p class='answer_sub'>2. Addition:
+										<p class='answer-item_sub'>x₁+x₂; x₁-x₂
+									<p class='answer_sub'>3. Letters of the Latin alphabet:
+										<p class='answer-item_sub'>a, b, c, d, ...
+									<p class='answer_sub'>4. Arabic numerals:
+										<p class='answer-item_sub'>0, 1, 2, ...
 								<p class='answer'>Examples of function input (the maximum number of variables is 32):
 									<p class='answer_sub'>2*n+3*m-5
 									<p class='answer_sub'>2*n+3*m-5
 									<p class='answer_sub'>n*3+m3-5
+							</div>
+						</div>
+					</div>
+					
+					<div class="answer_section_container">
+						<div class="answer_container" id="steps">
+							<label id="steps_selector" class="selector">&#9660; Solution algorithm</label>
+							<div id="steps_div">
+								<p class='answer'>Basis:
+									<p class='answer_sub'>1. A term without a variable will change for each state of a finite automaton
+									<p class='answer_sub'>2. The initial state is a summand without a variable
+									<p class='answer_sub'>3. The name of the state is indicated as a sign before the numeric value and the numeric value of the term itself without a variable. Example: "+1", "-3"
+									<p class='answer_sub'>4. The state in which there is no summand without a variable is denoted as the state "+0".
+								
+								<p class='answer'>Solution algorithm:
+									<p class='answer_sub'>1. Replace some set of bits with the places of variables
+									<p class='answer_sub'>2. Calculate the expression and store the resulting value in decimal notation
+									<p class='answer_sub'>1. If the calculated value is greater than or equal to 0, proceed to step 5 (operation sign - "+")
+									<p class='answer_sub'>4. If the calculated value is less than 0 (operation sign - "-"). The resulting numeric value is a multiple of 2?
+										<p class='answer-item_sub'>a) yes. Go to step 5 
+										<p class='answer-item_sub'>b) no. Add 2 to the numeric value and then operate with this sum. Example: if we got "-5", then we add 2 to 5 and get 7
+									<p class='answer_sub'>5. Translate the numeric value into binary notation
+									<p class='answer_sub'>6. Disable the last bit, its value will be the output value when switching from one state to another according to the current set of variable bits
+									<p class='answer_sub'>7. We translate the remaining sequence of bits into decimal notation
+									<p class='answer_sub'>8. The state to which we move from the current one with the help of this set of variable bits has the name of the operation sign and the numeric value obtained at step number seven
+									<p class='answer_sub'>9. Repeat steps 1-8 for all possible bitsets for variables
+									<p class='answer_sub'>10. Repeat steps 1-9 until new states stop appearing
 							</div>
 						</div>
 					</div>
@@ -87,6 +115,24 @@
 						<div class="answer_container" id="table_answer">
 							<label id="answer_pdnf_selector" class="selector">&#9660; Сanonical equation</label>
 							<div id="pdnf_div">
+							
+							</div>
+						</div>
+					</div>
+					
+					<div class="answer_section_container">
+						<div class="answer_container" id="img_answer">
+							<label id="answer_img_selector" class="selector">&#9660; Image</label>
+							<div id="img_div">
+							
+							</div>
+						</div>
+					</div>
+					
+					<div class="answer_section_container">
+						<div class="answer_container" id="uml_answer">
+							<label id="answer_uml_selector" class="selector">&#9660; UML code</label>
+							<div id="uml_div">
 							
 							</div>
 						</div>

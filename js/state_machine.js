@@ -228,4 +228,36 @@ class StateMachine {
 		this.canonical = res;
 	}
 	
+	toUmlString() {
+		var res = "@startuml\n";
+		res += "!theme sketchy-outline\n";
+		res += "title " + this.func  +"\n";
+		
+		for (var i = 0; i < this.states.length; i++) {
+			res += "object " + this.states[i].name.replace("+", "p").replace("-", "m") + "\n";
+		}
+		
+		for (var i = 0; i < this.states.length; i++) {
+			var used = new Array(this.sets.length).fill(0);
+			for (var k = 0; k < this.sets.length; k++) {
+				if (used[k] != 0)
+					continue;
+				var temp = this.states[i].trans[k];
+				var pairs = "";
+				for (var b = k; b < this.sets.length; b++) {
+					var curr_trans = this.states[i].trans[b];
+					if (temp.end === curr_trans.end) {
+						used[b] = 1;
+						pairs += curr_trans.set.toString() + "|" + curr_trans.res + "\\n";
+					}
+				}
+				res += (temp.start.replace("+", "p").replace("-", "m") + " --|> " + temp.end.replace("+", "p").replace("-", "m") + ":" + pairs + "\n");
+			}
+		}
+		
+		res += "@enduml";
+		return res;
+	}
+	
 };
+//2n - 10
