@@ -8,6 +8,20 @@ setHide("steps_div", "steps_selector", "Solution algorithm");
 
 var last = Date.now();
 
+var diaURL = "";
+
+function openURI(url) {
+    window.open(url, '_blank');
+}
+
+var openPNG = function(){
+	openURI("https://www.plantuml.com/plantuml/png/" + diaURL);
+}
+
+var openSVG = function(){
+	openURI("https://www.plantuml.com/plantuml/svg/" + diaURL);
+}
+
 document.getElementById("function-submit").onclick = function(){
 	var diff = Date.now() - last;
 	if (diff > 1000) {
@@ -45,7 +59,11 @@ document.getElementById("function-submit").onclick = function(){
 			
 			var img = document.createElement("img");
 			img.id = "diagram";
-			img.src = "https://www.plantuml.com/plantuml/png/" + compress2(umlString);
+			img.className = "diagram";
+			diaURL = compress2(umlString);
+			img.src = "https://www.plantuml.com/plantuml/svg/" + diaURL;
+			
+			document.getElementById("img_div").innerHTML = "<p class='answer'>Generated on the PalntUML server (plantuml.com/plantuml/uml). " + "<input type='button' value='Open PNG' onclick='openPNG()'><input type='button' value='Open SVG' onclick='openSVG()'>";
 			document.getElementById("img_div").appendChild(img);
 		} else {
 			alert("Invalid text");

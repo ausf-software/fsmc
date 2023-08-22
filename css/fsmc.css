@@ -5,6 +5,14 @@
 	background-color: #414141;
 }
 
+.img_div {
+	width: 100%;
+}
+
+.diagram {
+	width: 100%;
+}
+
 .calculator-text {
 	margin-top: 30px;
 	color: #C4C4C4;
